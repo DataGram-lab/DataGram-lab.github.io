@@ -265,7 +265,7 @@
       <div class="max-w-6xl mx-auto px-4 md:flex md:items-center md:gap-12">
         <div class="md:w-2/5 mb-8 md:mb-0 flex justify-center">
           <img
-            src="https://github.com/DataGram-lab/DataGram-lab.github.io/blob/main/leadsminer%20logo.png"
+            src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/leadsminer%20logo.png"
             alt="شعار LeadsMiner مع رمز معول تعدين يصنع ثقوب في صخر، ألوان شعار أزرق ورمادي"
             class="leadminer-img modern-card"
           />
