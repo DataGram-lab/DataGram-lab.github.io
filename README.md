@@ -242,8 +242,10 @@
     <div class="relative z-10 container mx-auto px-4">
       <div class="flex justify-center items-center mb-4 select-none">
       <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
-       alt="DataGram LeadsMiner Logo" 
-       class="max-h-20 md:max-h-32 object-contain">
+     alt="DataGram LeadsMiner Logo" 
+     style="background: transparent;" 
+     class="max-h-20 md:max-h-32 object-contain">
+
     </div>
 
       <p class="text-white text-xl md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed px-4 mb-8">
@@ -522,7 +524,9 @@
         <div class="flex justify-center items-center mb-4 select-none">
         <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
          alt="DataGram LeadsMiner Logo" 
+         style="background: transparent;" 
          class="max-h-20 md:max-h-32 object-contain">
+
 </div>
 
         <p class="text-blue-200 mt-2">© 2025 جميع الحقوق محفوظة</p>
