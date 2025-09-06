@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -241,10 +240,12 @@
   <!-- Hero Section -->
   <header class="hero-section py-16 md:py-24 text-center relative">
     <div class="relative z-10 container mx-auto px-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 flex justify-center items-center gap-1 select-none">
-        <span class="logo-letter">Data</span><span class="logo-letter d-blue">Gram</span>
-        <span class="bg-accent-light text-primary-dark text-sm px-3 py-1 rounded-full ml-2">LeadsMiner</span>
-      </h1>
+      <div class="flex justify-center items-center mb-4 select-none">
+      <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
+       alt="DataGram LeadsMiner Logo" 
+       class="max-h-20 md:max-h-32 object-contain">
+    </div>
+
       <p class="text-white text-xl md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed px-4 mb-8">
         الطريقة الأذكى لجلب عملاء مهتمين بدون تكاليف إعلانات
       </p>
@@ -518,10 +519,12 @@
   <footer class="bg-primary-dark py-8 text-white">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="mb-6 md:mb-0">
-        <h1 class="text-2xl font-extrabold flex items-center gap-1">
-          <span class="logo-letter">Data</span><span class="logo-letter d-blue">Gram</span>
-          <span class="text-sm bg-secondary-light text-primary-dark px-2 py-1 rounded-full mr-2">LeadsMiner</span>
-        </h1>
+        <div class="flex justify-center items-center mb-4 select-none">
+        <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
+         alt="DataGram LeadsMiner Logo" 
+         class="max-h-20 md:max-h-32 object-contain">
+</div>
+
         <p class="text-blue-200 mt-2">© 2025 جميع الحقوق محفوظة</p>
       </div>
       
