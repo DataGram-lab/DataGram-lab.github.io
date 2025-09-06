@@ -242,7 +242,7 @@
   <header class="hero-section py-16 md:py-24 text-center relative">
     <div class="relative z-10 container mx-auto px-4">
       <h1 class="text-4xl md:text-6xl font-extrabold mb-4 flex justify-center items-center gap-1 select-none">
-        <span class="logo-letter">D</span>ata<span class="logo-letter d-blue">G</span>ram
+        <span class="logo-letter">Data</span><span class="logo-letter d-blue">Gram</span>
         <span class="bg-accent-light text-primary-dark text-sm px-3 py-1 rounded-full ml-2">LeadsMiner</span>
       </h1>
       <p class="text-white text-xl md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed px-4 mb-8">
@@ -265,7 +265,7 @@
       <div class="max-w-6xl mx-auto px-4 md:flex md:items-center md:gap-12">
         <div class="md:w-2/5 mb-8 md:mb-0 flex justify-center">
           <img
-            src="https://drive.google.com/uc?export=view&id=1oI-zRvxFXYdiMQulrUAwt3oB76cPJzG0"
+            src="https://github.com/DataGram-lab/DataGram-lab.github.io/blob/main/leadsminer%20logo.png"
             alt="شعار LeadsMiner مع رمز معول تعدين يصنع ثقوب في صخر، ألوان شعار أزرق ورمادي"
             class="leadminer-img modern-card"
           />
@@ -519,7 +519,7 @@
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="mb-6 md:mb-0">
         <h1 class="text-2xl font-extrabold flex items-center gap-1">
-          <span class="logo-letter">D</span>ata<span class="logo-letter d-blue">G</span>ram
+          <span class="logo-letter">Data</span><span class="logo-letter d-blue">Gram</span>
           <span class="text-sm bg-secondary-light text-primary-dark px-2 py-1 rounded-full mr-2">LeadsMiner</span>
         </h1>
         <p class="text-blue-200 mt-2">© 2025 جميع الحقوق محفوظة</p>
@@ -528,7 +528,7 @@
       <div class="flex flex-col items-center md:items-end">
         <a href="https://wa.me/201027930040" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-accent-light font-semibold hover:text-accent-dark transition-colors mb-2">
           <i class="fab fa-whatsapp text-xl"></i>
-          <span>+20 10 279 300 40</span>
+          <span>+201027930040</span>
         </a>
         <div class="flex gap-4 mt-4">
           <a href="#" class="text-blue-200 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
