@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -342,8 +341,6 @@
           style="background: transparent;" 
           class="max-h-16 md:max-h-32 object-contain">
       </div>
-
-      <h1 class="text-2xl md:text-4xl font-bold mb-4">DataGram LeadsMiner</h1>
       <p class="text-white text-lg md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed px-4 mb-6 md:mb-8">
         الطريقة الأذكى لجلب عملاء مهتمين بدون تكاليف إعلانات
       </p>
@@ -454,9 +451,7 @@
                 متصفحك لا يدعم تشغيل الفيديو.
               </video>
             </div>
-          </div>
-
-
+          
           <div class="text-center mt-8 md:mt-10">
             <h3 class="text-xl md:text-2xl font-extrabold mb-4 md:mb-6">جاهز تشترك ؟</h3>
             <div class="flex flex-wrap justify-center gap-3 md:gap-4">
