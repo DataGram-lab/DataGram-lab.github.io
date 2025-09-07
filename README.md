@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -233,29 +234,124 @@
       right: 50%;
       transform: translateX(50%);
     }
+
+    /* Mobile-specific improvements */
+    @media (max-width: 767px) {
+      /* Improved mobile typography */
+      .hero-section h1 {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+      }
+      .hero-section p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        padding: 0 0.5rem;
+      }
+      
+      /* Better button sizing for touch */
+      .btn-mobile {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Improved spacing for mobile */
+      .mobile-section-padding {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+      }
+      
+      /* Better card layout for mobile */
+      .mobile-card {
+        margin-bottom: 1.5rem;
+        padding: 1.2rem;
+      }
+      
+      /* Improved grid for mobile features */
+      .mobile-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      /* Better pricing card layout */
+      .pricing-card-mobile {
+        margin-bottom: 2rem;
+        transform: scale(0.95);
+      }
+      .pricing-card-mobile:last-child {
+        margin-bottom: 0;
+      }
+      
+      /* Center align text on mobile */
+      .mobile-text-center {
+        text-align: center;
+      }
+      
+      /* Adjust video size for mobile */
+      .mobile-video {
+        width: 100%;
+        height: auto;
+        max-height: 240px;
+      }
+      
+      /* Footer adjustments */
+      .mobile-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1rem;
+      }
+      
+      /* Reduce icon sizes on mobile */
+      .mobile-icon {
+        font-size: 1.8rem;
+      }
+      
+      /* Better form elements for mobile */
+      input, select, textarea {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+      }
+      
+      /* Prevent horizontal scrolling */
+      body, html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      
+      /* Touch-friendly links */
+      a, button {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body class="overflow-x-hidden">
 
   <!-- Hero Section -->
-  <header class="hero-section py-16 md:py-24 text-center relative">
+  <header class="hero-section py-12 md:py-24 text-center relative">
     <div class="relative z-10 container mx-auto px-4">
       <div class="flex justify-center items-center mb-4 select-none">
-      <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
-     alt="DataGram LeadsMiner Logo" 
-     style="background: transparent;" 
-     class="max-h-20 md:max-h-32 object-contain">
+        <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
+          alt="DataGram LeadsMiner Logo" 
+          style="background: transparent;" 
+          class="max-h-16 md:max-h-32 object-contain">
+      </div>
 
-    </div>
-
-      <p class="text-white text-xl md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed px-4 mb-8">
+      <h1 class="text-2xl md:text-4xl font-bold mb-4">DataGram LeadsMiner</h1>
+      <p class="text-white text-lg md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed px-4 mb-6 md:mb-8">
         الطريقة الأذكى لجلب عملاء مهتمين بدون تكاليف إعلانات
       </p>
-      <div class="flex flex-wrap justify-center gap-4 mt-8">
-        <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-green px-8 py-3 rounded-lg text-lg flex items-center">
+      <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-6 md:mt-8">
+        <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
           <i class="fas fa-download ml-2"></i> تنزيل الان
         </a>
-        <a href="https://wa.me/201027930040" target="_blank" class="btn-white-bordered px-8 py-3 rounded-lg text-lg flex items-center">
+        <a href="https://wa.me/201027930040" target="_blank" class="btn-white-bordered px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
           <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
         </a>
       </div>
@@ -264,25 +360,25 @@
 
   <main class="bg-gray-50 text-gray-900">
     <!-- What is LeadsMiner -->
-    <section id="about" class="py-12 md:py-20 bg-white">
+    <section id="about" class="py-10 md:py-20 bg-white mobile-section-padding">
       <div class="max-w-6xl mx-auto px-4 md:flex md:items-center md:gap-12">
         <div class="md:w-2/5 mb-8 md:mb-0 flex justify-center">
           <img
             src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/leadsminer%20logo.png"
             alt="شعار LeadsMiner مع رمز معول تعدين يصنع ثقوب في صخر، ألوان شعار أزرق ورمادي"
-            class="leadminer-img modern-card"
+            class="leadminer-img modern-card max-w-[150px] md:max-w-[220px]"
           />
         </div>
-        <div class="md:w-3/5">
-          <h2 class="text-3xl font-bold mb-6 text-primary-dark section-heading">ما هو LeadsMiner ؟</h2>
-          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+        <div class="md:w-3/5 mobile-text-center md:text-right">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-primary-dark section-heading">ما هو LeadsMiner ؟</h2>
+          <p class="text-base md:text-lg leading-relaxed text-gray-700 mb-6">
             LeadsMiner أداة قوية على نظام الويندوز، تعمل بنفس منطق الاستهداف الموجود في مدير الإعلانات الخاص بمواقع التواصل الاجتماعي مثل (فيسبوك، انستقرام، تيك توك) وتوصلك لعملاء دقيقين ومهتمين — وكل هذا بدون ما تدفع ولا ريال على الإعلانات.
           </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg flex items-center">
+          <div class="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
+            <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-5 py-2.5 md:px-6 md:py-3 rounded-lg flex items-center btn-mobile text-sm md:text-base">
               <i class="fas fa-download ml-2"></i> تنزيل الان
             </a>
-            <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg flex items-center">
+            <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-5 py-2.5 md:px-6 md:py-3 rounded-lg flex items-center btn-mobile text-sm md:text-base">
               <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
             </a>
           </div>
@@ -291,55 +387,55 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-16 bg-gradient-to-b from-white to-gray-50">
+    <section id="features" class="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50 mobile-section-padding">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-4 text-primary-dark section-heading text-center">ميزات LeadsMiner</h2>
-        <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">اكتشف القوة الكاملة لأداة استخراج العملاء الرائدة في السوق</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-primary-dark section-heading text-center">ميزات LeadsMiner</h2>
+        <p class="text-base md:text-lg text-center text-gray-600 max-w-3xl mx-auto mb-8 md:mb-12">اكتشف القوة الكاملة لأداة استخراج العملاء الرائدة في السوق</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="feature-card animate-fade-in">
-            <div class="text-secondary-light text-3xl mb-4"><i class="fas fa-users"></i></div>
+        <div class="grid mobile-feature-grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div class="feature-card animate-fade-in mobile-card">
+            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-icon"><i class="fas fa-users"></i></div>
             <h3 class="text-xl font-bold mb-2 text-primary-dark">عملاء غير محدودين</h3>
-            <p class="text-gray-700">تقدر تستخرج عدد لا نهائي من العملاء المحتملين لعملك</p>
+            <p class="text-gray-700 text-sm md:text-base">تقدر تستخرج عدد لا نهائي من العملاء المحتملين لعملك</p>
           </div>
           
-          <div class="feature-card animate-fade-in">
-            <div class="text-secondary-light text-3xl mb-4"><i class="fas fa-globe"></i></div>
+          <div class="feature-card animate-fade-in mobile-card">
+            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-icon"><i class="fas fa-globe"></i></div>
             <h3 class="text-xl font-bold mb-2 text-primary-dark">استهداف عالمي</h3>
-            <p class="text-gray-700">استهدف أي دولة في العالم مع دقة في التوصيل</p>
+            <p class="text-gray-700 text-sm md:text-base">استهدف أي دولة في العالم مع دقة في التوصيل</p>
           </div>
           
-          <div class="feature-card animate-fade-in">
-            <div class="text-secondary-light text-3xl mb-4"><i class="fas fa-bullseye"></i></div>
+          <div class="feature-card animate-fade-in mobile-card">
+            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-icon"><i class="fas fa-bullseye"></i></div>
             <h3 class="text-xl font-bold mb-2 text-primary-dark">استهداف ذكي</h3>
-            <p class="text-gray-700">حدد اهتمامات العملاء، الفئة العمرية، النوع، وحتى مكان السكن</p>
+            <p class="text-gray-700 text-sm md:text-base">حدد اهتمامات العملاء، الفئة العمرية، النوع، وحتى مكان السكن</p>
           </div>
           
-          <div class="feature-card animate-fade-in">
-            <div class="text-secondary-light text-3xl mb-4"><i class="fas fa-shield-alt"></i></div>
+          <div class="feature-card animate-fade-in mobile-card">
+            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-icon"><i class="fas fa-shield-alt"></i></div>
             <h3 class="text-xl font-bold mb-2 text-primary-dark">خصوصية وأمان</h3>
-            <p class="text-gray-700">بياناتك تبقى عندك وما تطلع لحد، بأعلى معايير الأمان</p>
+            <p class="text-gray-700 text-sm md:text-base">بياناتك تبقى عندك وما تطلع لحد، بأعلى معايير الأمان</p>
           </div>
           
-          <div class="feature-card animate-fade-in">
-            <div class="text-secondary-light text-3xl mb-4"><i class="fas fa-money-bill-wave"></i></div>
+          <div class="feature-card animate-fade-in mobile-card">
+            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-icon"><i class="fas fa-money-bill-wave"></i></div>
             <h3 class="text-xl font-bold mb-2 text-primary-dark">توفير المال</h3>
-            <p class="text-gray-700">وفر آلاف الريالات وتخلى عن الحملات الإعلانية المكلفة</p>
+            <p class="text-gray-700 text-sm md:text-base">وفر آلاف الريالات وتخلى عن الحملات الإعلانية المكلفة</p>
           </div>
           
-          <div class="feature-card animate-fade-in">
-            <div class="text-secondary-light text-3xl mb-4"><i class="fas fa-headset"></i></div>
+          <div class="feature-card animate-fade-in mobile-card">
+            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-icon"><i class="fas fa-headset"></i></div>
             <h3 class="text-xl font-bold mb-2 text-primary-dark">دعم فني 24/7</h3>
-            <p class="text-gray-700">فريق دعم فني متاح على مدار الساعة لمساعدتك</p>
+            <p class="text-gray-700 text-sm md:text-base">فريق دعم فني متاح على مدار الساعة لمساعدتك</p>
           </div>
         </div>
         
         <!-- Action buttons -->
-        <div class="flex flex-wrap justify-center gap-4 mt-12">
-          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-8 py-3 rounded-lg text-lg flex items-center">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-12">
+          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
             <i class="fas fa-download ml-2"></i> تنزيل الان
           </a>
-          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-8 py-3 rounded-lg text-lg flex items-center">
+          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
             <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
           </a>
         </div>
@@ -347,13 +443,13 @@
     </section>
 
     <!-- How it works -->
-    <section class="py-16 bg-primary-light text-white">
+    <section class="py-12 md:py-16 bg-primary-light text-white mobile-section-padding">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 section-heading text-center">كيف يعمل LeadsMiner؟</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 section-heading text-center">كيف يعمل LeadsMiner؟</h2>
         
-          <div class="bg-primary rounded-xl p-6 md:p-8 mb-8 modern-card">
-            <div class="info-scroll space-y-4 mb-8 flex justify-center">
-              <video class="rounded-lg shadow-lg" width="100%" controls>
+          <div class="bg-primary rounded-xl p-4 md:p-8 mb-6 md:mb-8 modern-card">
+            <div class="info-scroll space-y-4 mb-6 md:mb-8 flex justify-center">
+              <video class="rounded-lg shadow-lg mobile-video" controls>
                 <source src="howitworks.mp4" type="video/mp4">
                 متصفحك لا يدعم تشغيل الفيديو.
               </video>
@@ -361,13 +457,13 @@
           </div>
 
 
-          <div class="text-center mt-10">
-            <h3 class="text-2xl font-extrabold mb-6">جاهز تشترك ؟</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-              <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-8 py-3 rounded-lg text-lg flex items-center">
+          <div class="text-center mt-8 md:mt-10">
+            <h3 class="text-xl md:text-2xl font-extrabold mb-4 md:mb-6">جاهز تشترك ؟</h3>
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+              <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
                 <i class="fas fa-download ml-2"></i> تنزيل الان
               </a>
-              <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-8 py-3 rounded-lg text-lg flex items-center">
+              <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
                 <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
               </a>
             </div>
@@ -377,75 +473,75 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-16 bg-gray-50">
+    <section id="pricing" class="py-12 md:py-16 bg-gray-50 mobile-section-padding">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-4 text-primary-dark section-heading text-center">باقات LeadsMiner</h2>
-        <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">اختر الباقة المناسبة لاحتياجاتك وابدأ في زيادة مبيعاتك اليوم</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-primary-dark section-heading text-center">باقات LeadsMiner</h2>
+        <p class="text-base md:text-lg text-center text-gray-600 max-w-3xl mx-auto mb-8 md:mb-12">اختر الباقة المناسبة لاحتياجاتك وابدأ في زيادة مبيعاتك اليوم</p>
 
-        <div class="pricing-grid grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-3">
           <!-- Beginner -->
-          <div class="relative bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 transform hover:scale-105 transition-transform duration-300 modern-card">
+          <div class="relative bg-white rounded-xl shadow-lg p-5 md:p-6 text-center text-gray-800 transform hover:scale-105 transition-transform duration-300 modern-card pricing-card-mobile">
             <div class="ribbon ribbon-blue">مبتدئ</div>
-            <div class="my-6">
-              <div class="text-4xl font-bold text-primary-dark">370$</div>
-              <div class="text-gray-500 mt-2">شهرياً</div>
+            <div class="my-5 md:my-6">
+              <div class="text-3xl md:text-4xl font-bold text-primary-dark">370$</div>
+              <div class="text-gray-500 mt-2 text-sm md:text-base">شهرياً</div>
             </div>
-            <ul class="text-right space-y-3 my-6">
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> اشتراك لمدة شهر واحد</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> عدد غير محدود من العملاء</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> استهداف دولي مفتوح</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> دعم فني 24 ساعة</li>
+            <ul class="text-right space-y-2 md:space-y-3 my-5 md:my-6">
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> اشتراك لمدة شهر واحد</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> عدد غير محدود من العملاء</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> استهداف دولي مفتوح</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> دعم فني 24 ساعة</li>
             </ul>
-            <a href="https://wa.me/201027930040" class="btn-blue w-full py-3 rounded-lg mt-6 flex items-center justify-center">
+            <a href="https://wa.me/201027930040" class="btn-blue w-full py-3 rounded-lg mt-5 md:mt-6 flex items-center justify-center btn-mobile text-sm md:text-base">
               <i class="fas fa-shopping-cart ml-2"></i> اشترك الآن
             </a>
           </div>
 
           <!-- Pro -->
-          <div class="relative bg-white rounded-xl shadow-xl p-8 text-center text-gray-900 transform scale-105 border-4 border-accent-light z-10 modern-card">
+          <div class="relative bg-white rounded-xl shadow-xl p-6 md:p-8 text-center text-gray-900 transform md:scale-105 border-4 border-accent-light z-10 modern-card pricing-card-mobile">
             <div class="ribbon ribbon-green">الأكثر شهرة</div>
-            <div class="my-6">
-              <div class="text-4xl font-bold text-primary-dark">2999$</div>
-              <div class="text-gray-500 mt-2">سنوياً <span class="text-green-600">(وفر 20%)</span></div>
+            <div class="my-5 md:my-6">
+              <div class="text-3xl md:text-4xl font-bold text-primary-dark">2999$</div>
+              <div class="text-gray-500 mt-2 text-sm md:text-base">سنوياً <span class="text-green-600">(وفر 20%)</span></div>
             </div>
-            <ul class="text-right space-y-3 my-6">
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> اشتراك لمدة عام كامل</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> عدد غير محدود من العملاء</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> استهداف دولي مفتوح</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> دعم فني 24 ساعة</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> تحديثات مجانية</li>
+            <ul class="text-right space-y-2 md:space-y-3 my-5 md:my-6">
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> اشتراك لمدة عام كامل</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> عدد غير محدود من العملاء</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> استهداف دولي مفتوح</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> دعم فني 24 ساعة</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> تحديثات مجانية</li>
             </ul>
-            <a href="https://wa.me/201027930040" class="btn-green w-full py-3 rounded-lg mt-6 flex items-center justify-center">
+            <a href="https://wa.me/201027930040" class="btn-green w-full py-3 rounded-lg mt-5 md:mt-6 flex items-center justify-center btn-mobile text-sm md:text-base">
               <i class="fas fa-crown ml-2"></i> اشترك الآن
             </a>
           </div>
 
           <!-- Expert -->
-          <div class="relative bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 transform hover:scale-105 transition-transform duration-300 modern-card">
+          <div class="relative bg-white rounded-xl shadow-lg p-5 md:p-6 text-center text-gray-800 transform hover:scale-105 transition-transform duration-300 modern-card pricing-card-mobile">
             <div class="ribbon ribbon-gray">خبير</div>
-            <div class="my-6">
-              <div class="text-4xl font-bold text-primary-dark">3700$</div>
-              <div class="text-gray-500 mt-2">دفعة واحدة</div>
+            <div class="my-5 md:my-6">
+              <div class="text-3xl md:text-4xl font-bold text-primary-dark">3700$</div>
+              <div class="text-gray-500 mt-2 text-sm md:text-base">دفعة واحدة</div>
             </div>
-            <ul class="text-right space-y-3 my-6">
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> اشتراك مدى الحياة</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> عدد لا نهائي من العملاء</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> استهداف دولي مفتوح</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> دعم فني 24 ساعة</li>
-              <li class="flex items-center justify-end"><span class="check-icon">✔</span> تحديثات مجانية دائمة</li>
+            <ul class="text-right space-y-2 md:space-y-3 my-5 md:my-6">
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> اشتراك مدى الحياة</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> عدد لا نهائي من العملاء</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> استهداف دولي مفتوح</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> دعم فني 24 ساعة</li>
+              <li class="flex items-center justify-end text-sm md:text-base"><span class="check-icon">✔</span> تحديثات مجانية دائمة</li>
             </ul>
-            <a href="https://wa.me/201027930040" class="btn-blue w-full py-3 rounded-lg mt-6 flex items-center justify-center">
+            <a href="https://wa.me/201027930040" class="btn-blue w-full py-3 rounded-lg mt-5 md:mt-6 flex items-center justify-center btn-mobile text-sm md:text-base">
               <i class="fas fa-gem ml-2"></i> اشترك الآن
             </a>
           </div>
         </div>
         
         <!-- Action buttons -->
-        <div class="flex flex-wrap justify-center gap-4 mt-12">
-          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-8 py-3 rounded-lg text-lg flex items-center">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-12">
+          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
             <i class="fas fa-download ml-2"></i> تنزيل الان
           </a>
-          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-8 py-3 rounded-lg text-lg flex items-center">
+          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
             <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
           </a>
         </div>
@@ -453,33 +549,32 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
+    <section id="contact" class="py-12 md:py-16 bg-white mobile-section-padding">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4 text-primary-dark section-heading text-center">تواصل معنا</h2>
-        <p class="text-lg text-gray-600 mb-8">هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا متاح لخدمتك</p>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary-dark section-heading text-center">تواصل معنا</h2>
+        <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8">هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا متاح لخدمتك</p>
         
-        <div class="bg-blue-50 rounded-xl p-8 modern-card">
-          <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
-            <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg flex items-center">
-              <i class="fab fa-whatsapp text-2xl ml-2"></i> واتساب
+        <div class="bg-blue-50 rounded-xl p-5 md:p-8 modern-card">
+          <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-6 md:mb-8">
+            <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-5 py-2.5 md:px-6 md:py-3 rounded-lg flex items-center btn-mobile text-sm md:text-base">
+              <i class="fab fa-whatsapp text-xl ml-2"></i> واتساب
             </a>
-            <a href="mailto:info@datagram.site" class="btn-blue px-6 py-3 rounded-lg flex items-center">
-              <i class="fas fa-envelope text-2xl ml-2"></i> البريد الإلكتروني
+            <a href="mailto:info@datagram.site" class="btn-blue px-5 py-2.5 md:px-6 md:py-3 rounded-lg flex items-center btn-mobile text-sm md:text-base">
+              <i class="fas fa-envelope text-xl ml-2"></i> البريد الإلكتروني
             </a>
           </div>
           
-          <p class="text-primary-dark font-semibold">
+          <p class="text-primary-dark font-semibold text-base md:text-lg">
             <i class="fas fa-phone-alt ml-2"></i> +201027930040
           </p>
-  
         </div>
         
         <!-- Action buttons -->
-        <div class="flex flex-wrap justify-center gap-4 mt-12">
-          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-8 py-3 rounded-lg text-lg flex items-center">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-12">
+          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
             <i class="fas fa-download ml-2"></i> تنزيل الان
           </a>
-          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-8 py-3 rounded-lg text-lg flex items-center">
+          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
             <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
           </a>
         </div>
@@ -487,28 +582,28 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-12 md:py-16 bg-gray-50 mobile-section-padding">
       <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-4 text-primary-dark section-heading text-center">الأسئلة الشائعة</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-primary-dark section-heading text-center">الأسئلة الشائعة</h2>
         
-        <div class="space-y-4 mt-8">
-          <div class="bg-white rounded-xl p-6 shadow modern-card">
-            <h3 class="text-xl font-bold text-primary-dark mb-2">هل أحتاج إلى خبرة تقنية لاستخدام LeadsMiner؟</h3>
-            <p class="text-gray-700">لا، LeadsMiner صمم ليكون سهل الاستخدام حتى لأولئك الذين ليست لديهم خلفية تقنية. واجهة المستخدم بسيطة وبديهية.</p>
+        <div class="space-y-4 mt-6 md:mt-8">
+          <div class="bg-white rounded-xl p-5 md:p-6 shadow modern-card mobile-card">
+            <h3 class="text-lg md:text-xl font-bold text-primary-dark mb-2">هل أحتاج إلى خبرة تقنية لاستخدام LeadsMiner؟</h3>
+            <p class="text-gray-700 text-sm md:text-base">لا، LeadsMiner صمم ليكون سهل الاستخدام حتى لأولئك الذين ليست لديهم خلفية تقنية. واجهة المستخدم بسيطة وبديهية.</p>
           </div>
           
-          <div class="bg-white rounded-xl p-6 shadow modern-card">
-            <h3 class="text-xl font-bold text-primary-dark mb-2">كم من الوقت يستغرق لبدء رؤية النتائج؟</h3>
-            <p class="text-gray-700">معظم العملاء يبدأون في رؤية النتائج من الساعات الاولي، حيث يمكنك استخراج أول قائمة عملاء محتملين خلال اقل من ساعة واحدة من التثبيت.</p>
+          <div class="bg-white rounded-xl p-5 md:p-6 shadow modern-card mobile-card">
+            <h3 class="text-lg md:text-xl font-bold text-primary-dark mb-2">كم من الوقت يستغرق لبدء رؤية النتائج؟</h3>
+            <p class="text-gray-700 text-sm md:text-base">معظم العملاء يبدأون في رؤية النتائج من الساعات الاولي، حيث يمكنك استخراج أول قائمة عملاء محتملين خلال اقل من ساعة واحدة من التثبيت.</p>
           </div>
         </div>
         
         <!-- Action buttons -->
-        <div class="flex flex-wrap justify-center gap-4 mt-12">
-          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-8 py-3 rounded-lg text-lg flex items-center">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-12">
+          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
             <i class="fas fa-download ml-2"></i> تنزيل الان
           </a>
-          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-8 py-3 rounded-lg text-lg flex items-center">
+          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
             <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
           </a>
         </div>
@@ -516,18 +611,16 @@
     </section>
   </main>
 
-  <footer class="bg-primary-dark py-8 text-white">
+  <footer class="bg-primary-dark py-8 text-white mobile-footer">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="mb-6 md:mb-0">
         <div class="flex justify-center items-center mb-4 select-none">
-        <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
-         alt="DataGram LeadsMiner Logo" 
-         style="background: transparent;" 
-         class="max-h-20 md:max-h-32 object-contain">
-
-</div>
-
-        <p class="text-blue-200 mt-2">© 2025 جميع الحقوق محفوظة</p>
+          <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
+            alt="DataGram LeadsMiner Logo" 
+            style="background: transparent;" 
+            class="max-h-16 md:max-h-24 object-contain">
+        </div>
+        <p class="text-blue-200 mt-2 text-sm md:text-base">© 2025 جميع الحقوق محفوظة</p>
       </div>
       
       <div class="flex flex-col items-center md:items-end">
