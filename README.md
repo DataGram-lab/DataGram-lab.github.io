@@ -438,7 +438,7 @@
 <body class="overflow-x-hidden">
 
   <!-- Hero Section -->
-  <header class="hero-section py-12 md:py-24 text-center relative">
+  
     <div class="relative z-10 container mx-auto px-4">
       <div class="flex justify-center items-center mb-4 select-none">
         <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
@@ -447,7 +447,6 @@
           class="max-h-16 md:max-h-32 object-contain">
       </div>
 
-      <h1 class="text-2xl md:text-4xl font-bold mb-4">DataGram LeadsMiner</h1>
       <p class="text-white text-lg md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed px-4 mb-6 md:mb-8">
         الطريقة الأذكى لجلب عملاء مهتمين بدون تكاليف إعلانات
       </p>
@@ -558,7 +557,7 @@
                 متصفحك لا يدعم تشغيل الفيديو.
               </video>
             </div>
-          </div>
+         
 
 
           <div class="text-center mt-8 md:mt-10">
