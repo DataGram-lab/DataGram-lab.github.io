@@ -351,17 +351,15 @@
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12 section-heading text-center">كيف يعمل LeadsMiner؟</h2>
         
-        <div class="bg-primary rounded-xl p-6 md:p-8 mb-8 modern-card">
-          <div class="info-scroll space-y-4 mb-8">
-            <ul class="list-none text-lg">
-              <li class="flex items-center gap-2 mb-4 p-3 bg-primary-dark rounded-lg"><span class="check-icon">✔</span> عملاء غير محدودة : تقدر تستخرج عدد لا نهائي من العملاء</li>
-              <li class="flex items-center gap-2 mb-4 p-3 bg-primary-dark rounded-lg"><span class="check-icon">✔</span> استهداف مفتوح لكل دول العالم : تختار الدولة اللي تبغا وتوصل لها</li>
-              <li class="flex items-center gap-2 mb-4 p-3 bg-primary-dark rounded-lg"><span class="check-icon">✔</span> استهداف ذكي : تحدد اهتمامات و سلوكيات العميل، الفئة العمرية، النوع، وحتى مكان السكن</li>
-              <li class="flex items-center gap-2 mb-4 p-3 bg-primary-dark rounded-lg"><span class="check-icon">✔</span> استهداف دقيق - زي نظام إعلانات فيسبوك و انستجرام يوصل لك جمهورك المثالي</li>
-              <li class="flex items-center gap-2 mb-4 p-3 bg-primary-dark rounded-lg"><span class="check-icon">✔</span> بدون إعلانات - ووفر آلاف الريالات وتخلى عن الحملات المدفوعة</li>
-              <li class="flex items-center gap-2 mb-4 p-3 bg-primary-dark rounded-lg"><span class="check-icon">✔</span> خصوصية وأمان - بياناتك تبقى عندك وما تطلع لحد</li>
-            </ul>
+          <div class="bg-primary rounded-xl p-6 md:p-8 mb-8 modern-card">
+            <div class="info-scroll space-y-4 mb-8 flex justify-center">
+              <video class="rounded-lg shadow-lg" width="100%" controls>
+                <source src="howitworks.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو.
+              </video>
+            </div>
           </div>
+
 
           <div class="text-center mt-10">
             <h3 class="text-2xl font-extrabold mb-6">جاهز تشترك ؟</h3>
