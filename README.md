@@ -686,9 +686,6 @@
         <div class="floating-particles" id="particles"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="logo-container">
-                    <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" alt="DataGram Logo" class="logo">
-                </div>
                 <h1 data-aos="fade-up">الطريقة الأذكى لجلب عملاء مهتمين بدون تكاليف إعلانات</h1>
                 <p data-aos="fade-up" data-aos-delay="200">اكتشف قوة البيانات واستهدف عملاء محتملين بذكاء مع LeadsMiner - الحل المتكامل لتنمية أعمالك وتحقيق أرباح غير مسبوقة</p>
                 <div class="btn-group" data-aos="fade-up" data-aos-delay="400">
