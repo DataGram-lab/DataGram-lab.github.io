@@ -1,696 +1,914 @@
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              light: '#4f8fcc',
-              DEFAULT: '#0f3f80',
-              dark: '#0a2a55'
-            },
-            secondary: {
-              light: '#5ec8f9',
-              DEFAULT: '#0ea5e9',
-              dark: '#0284c7'
-            },
-            accent: {
-              light: '#7ae7a2',
-              DEFAULT: '#4ade80',
-              dark: '#22c55e'
-            }
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataGram - LeadsMiner | الطريقة الأذكى لجلب العملاء</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #4895ef;
+            --secondary: #3a86ff;
+            --accent: #7209b7;
+            --accent-light: #9d4edd;
+            --light: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --text-dark: #2d3748;
+            --text-medium: #4a5568;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent-light));
+            --gradient-light: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-      }
-    }
-  </script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
-    
-    body {
-      font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #4f8fcc 0%, #0f3f80 100%);
-      color: white;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      scroll-behavior: smooth;
-    }
-    .btn-blue {
-      background: #5ec8f9;
-      color: white;
-      transition: all 0.3s ease;
-      border: 2px solid #5ec8f9;
-    }
-    .btn-blue:hover {
-      background: #0ea5e9;
-      border-color: #0ea5e9;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(94, 200, 249, 0.4);
-    }
-    .btn-green {
-      background: #7ae7a2;
-      color: #064e3b;
-      transition: all 0.3s ease;
-      border: 2px solid #7ae7a2;
-      font-weight: 600;
-      box-shadow: 0 4px 8px rgba(122, 231, 162, 0.4);
-    }
-    .btn-green:hover {
-      background: #4ade80;
-      border-color: #4ade80;
-      box-shadow: 0 6px 12px rgba(74, 222, 128, 0.6);
-      color: #064e3b;
-      transform: translateY(-2px);
-    }
-    .btn-white-bordered {
-      background: transparent;
-      border: 2px solid white;
-      color: white;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .btn-white-bordered:hover {
-      background: white;
-      color: #0f3f80;
-      transform: translateY(-2px);
-    }
-    /* Scrollbar for info section */
-    .info-scroll {
-      max-height: 260px;
-      overflow-y: auto;
-      scroll-behavior: smooth;
-      padding-right: 1rem;
-    }
-    .info-scroll::-webkit-scrollbar {
-      width: 6px;
-    }
-    .info-scroll::-webkit-scrollbar-thumb {
-      background-color: #7ae7a2;
-      border-radius: 10px;
-    }
-    /* Ribbon style for pricing */
-    .ribbon {
-      position: absolute;
-      top: -10px;
-      font-weight: 700;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.875rem;
-      white-space: nowrap;
-    }
-    .ribbon-blue {
-      background-color: #5ec8f9;
-      color: white;
-      right: 0.5rem;
-    }
-    .ribbon-green {
-      background-color: #7ae7a2;
-      color: #064e3b;
-      left: 0.5rem;
-    }
-    .ribbon-gray {
-      background-color: #a0aec0;
-      color: white;
-      left: 0.5rem;
-    }
-    /* Custom checkbox icons */
-    .check-icon {
-      color: #7ae7a2;
-      font-weight: 800;
-      font-size: 1.3rem;
-      margin-left: 0.5rem;
-    }
-    /* Logo stylization */
-    .logo-letter {
-      font-weight: 900;
-      color: #5ec8f9;
-    }
-    .logo-letter.d-blue {
-      color: #7ae7a2;
-    }
-    /* Image container styling */
-    .leadminer-img {
-      max-width: 180px;
-      margin: 0 auto 1rem auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    }
-    /* Feature cards */
-    .feature-card {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 16px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      height: 100%;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .feature-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-    /* Hero section */
-    .hero-section {
-      background: url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center;
-      background-size: cover;
-      position: relative;
-    }
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(79, 143, 204, 0.9) 0%, rgba(10, 42, 85, 0.85) 100%);
-    }
-    /* Responsive adjustments */
-    @media (min-width: 768px) {
-      .pricing-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .section-padding {
-        padding-left: 4rem;
-        padding-right: 4rem;
-      }
-      .leadminer-img {
-        max-width: 220px;
-      }
-    }
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in {
-      animation: fadeIn 1s ease-out forwards;
-    }
-    /* Stagger animation for features */
-    .feature-card:nth-child(1) { animation-delay: 0.1s; }
-    .feature-card:nth-child(2) { animation-delay: 0.2s; }
-    .feature-card:nth-child(3) { animation-delay: 0.3s; }
-    .feature-card:nth-child(4) { animation-delay: 0.4s; }
-    .feature-card:nth-child(5) { animation-delay: 0.5s; }
-    .feature-card:nth-child(6) { animation-delay: 0.6s; }
-    
-    /* Modern card styling */
-    .modern-card {
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-    .modern-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Section headings */
-    .section-heading {
-      position: relative;
-      padding-bottom: 1rem;
-      margin-bottom: 2rem;
-    }
-    .section-heading::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(to left, #5ec8f9, #7ae7a2);
-      border-radius: 2px;
-    }
-    .section-heading.text-center::after {
-      right: 50%;
-      transform: translateX(50%);
-    }
 
-    /* Mobile-specific improvements */
-    @media (max-width: 767px) {
-      /* Improved mobile typography */
-      .hero-section h1 {
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-      }
-      .hero-section p {
-        font-size: 1rem;
-        line-height: 1.6rem;
-        padding: 0 0.5rem;
-      }
-      
-      /* Better button sizing for touch */
-      .btn-mobile {
-        padding: 0.8rem 1.2rem;
-        font-size: 1rem;
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      /* Improved spacing for mobile */
-      .mobile-section-padding {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
-      }
-      
-      /* Better card layout for mobile */
-      .mobile-card {
-        margin-bottom: 1.5rem;
-        padding: 1.2rem;
-      }
-      
-      /* Improved grid for mobile features */
-      .mobile-feature-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      
-      /* Better pricing card layout */
-      .pricing-card-mobile {
-        margin-bottom: 2rem;
-        transform: scale(0.95);
-      }
-      .pricing-card-mobile:last-child {
-        margin-bottom: 0;
-      }
-      
-      /* Center align text on mobile */
-      .mobile-text-center {
-        text-align: center;
-      }
-      
-      /* Adjust video size for mobile */
-      .mobile-video {
-        width: 100%;
-        height: auto;
-        max-height: 240px;
-      }
-      
-      /* Footer adjustments */
-      .mobile-footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem 1rem;
-      }
-      
-      /* Reduce icon sizes on mobile */
-      .mobile-icon {
-        font-size: 1.8rem;
-      }
-      
-      /* Better form elements for mobile */
-      input, select, textarea {
-        font-size: 16px !important; /* Prevents zoom on iOS */
-      }
-      
-      /* Prevent horizontal scrolling */
-      body, html {
-        overflow-x: hidden;
-        width: 100%;
-      }
-      
-      /* Touch-friendly links */
-      a, button {
-        min-height: 44px;
-        min-width: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
 
-      /* Features section improvements */
-      .mobile-feature-section {
-        padding: 2rem 1rem;
-      }
-      
-      .mobile-feature-card {
-        padding: 1.2rem;
-        margin-bottom: 0.5rem;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .mobile-feature-icon {
-        font-size: 1.8rem;
-        margin-bottom: 0.8rem;
-      }
-      
-      .mobile-feature-title {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.4;
-      }
-      
-      .mobile-feature-desc {
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-      
-      /* Pricing section improvements */
-      .mobile-pricing-section {
-        padding: 2rem 1rem;
-      }
-      
-      .mobile-pricing-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-      
-      .mobile-pricing-card {
-        padding: 1.5rem;
-        margin-bottom: 0;
-        transform: scale(1);
-        width: 100%;
-      }
-      
-      .mobile-pricing-card.featured {
-        transform: scale(1);
-        order: -1; /* Move featured card to top on mobile */
-        margin: 0.5rem 0 1.5rem 0;
-      }
-      
-      .mobile-price {
-        font-size: 2rem;
-        margin: 0.8rem 0;
-      }
-      
-      .mobile-price-desc {
-        font-size: 0.95rem;
-      }
-      
-      .mobile-pricing-features {
-        margin: 1rem 0;
-      }
-      
-      .mobile-pricing-feature {
-        font-size: 0.9rem;
-        margin-bottom: 0.6rem;
-        line-height: 1.4;
-      }
-      
-      .mobile-pricing-button {
-        padding: 0.8rem;
-        font-size: 0.95rem;
-        margin-top: 1rem;
-      }
-      
-      /* General improvements for mobile */
-      .mobile-section-heading {
-        font-size: 1.6rem;
-        margin-bottom: 0.5rem;
-      }
-      
-      .mobile-section-subheading {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
-        padding: 0 0.5rem;
-      }
-      
-      .mobile-action-buttons {
-        flex-direction: column;
-        gap: 0.8rem;
-        margin-top: 2rem;
-      }
-      
-      .mobile-action-button {
-        width: 100%;
-        justify-content: center;
-        padding: 0.9rem;
-        font-size: 1rem;
-      }
-    }
-  </style>
+        body {
+            background-color: var(--light);
+            color: var(--text-medium);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--text-dark);
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            color: var(--text-medium);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--gradient-light);
+            transition: var(--transition);
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover:before {
+            width: 100%;
+            right: auto;
+            left: 0;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            background: var(--light-gray);
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: 
+                radial-gradient(circle at 90% 10%, rgba(67, 97, 238, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 10% 80%, rgba(157, 78, 221, 0.1) 0%, transparent 30%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease 0.2s;
+            animation-fill-mode: both;
+        }
+
+        .floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--gradient);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: float 15s infinite linear;
+        }
+
+        /* What is LeadsMiner Section */
+        .about {
+            background: white;
+            border-radius: 20px;
+            margin: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(67, 97, 238, 0.05) 0%, transparent 70%);
+            z-index: 0;
+            transform: rotate(30deg);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        /* How it Works Section */
+        .how-it-works {
+            position: relative;
+            background: var(--light-gray);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto 50px;
+            background: white;
+            transform: perspective(1000px) rotateX(5deg);
+            transition: var(--transition);
+        }
+
+        .video-container:hover {
+            transform: perspective(1000px) rotateX(0deg);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .video-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid var(--medium-gray);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 0%;
+            background: var(--gradient);
+            opacity: 0.05;
+            transition: var(--transition);
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(113, 73, 217, 0.2);
+        }
+
+        .feature-card:hover:before {
+            height: 100%;
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            margin: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center bottom;
+            z-index: 0;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact h2:after {
+            background: white;
+        }
+
+        .contact p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer {
+            padding: 50px 0 30px;
+            text-align: center;
+            background: var(--light-gray);
+            color: var(--text-medium);
+            position: relative;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--gradient);
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .social-icons a {
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: var(--transition);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .social-icons a:hover {
+            color: white;
+            transform: translateY(-5px);
+            background: var(--gradient);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        /* Mobile Nav Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column-reverse;
+            }
+            
+            .about, .contact {
+                margin: 20px;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.9rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar {
+                padding: 15px 0;
+            }
+        }
+    </style>
 </head>
-<body class="overflow-x-hidden">
-
-  <!-- Hero Section -->
-  <header class="hero-section py-12 md:py-24 text-center relative">
-    <div class="relative z-10 container mx-auto px-4">
-      <div class="flex justify-center items-center mb-4 select-none">
-        <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
-          alt="DataGram LeadsMiner Logo" 
-          style="background: transparent;" 
-          class="max-h-16 md:max-h-32 object-contain">
-      </div>
-
-      <p class="text-white text-lg md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed px-4 mb-6 md:mb-8">
-        الطريقة الأذكى لجلب عملاء مهتمين بدون تكاليف إعلانات
-      </p>
-      <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-6 md:mt-8">
-        <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
-          <i class="fas fa-download ml-2"></i> تنزيل الان
-        </a>
-        <a href="https://wa.me/201027930040" target="_blank" class="btn-white-bordered px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
-          <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main class="bg-gray-50 text-gray-900">
-    <!-- What is LeadsMiner -->
-    <section id="about" class="py-10 md:py-20 bg-white mobile-section-padding">
-      <div class="max-w-6xl mx-auto px-4 md:flex md:items-center md:gap-12">
-        <div class="md:w-2/5 mb-8 md:mb-0 flex justify-center">
-          <img
-            src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/leadsminer%20logo.png"
-            alt="شعار LeadsMiner مع رمز معول تعدين يصنع ثقوب في صخر، ألوان شعار أزرق ورمادي"
-            class="leadminer-img modern-card max-w-[150px] md:max-w-[220px]"
-          />
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" alt="DataGram Logo" class="nav-logo">
+            <div class="nav-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#about">عن البرنامج</a>
+                <a href="#how-it-works">كيف يعمل</a>
+                <a href="#features">الميزات</a>
+                <a href="#contact">اتصل بنا</a>
+            </div>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div class="md:w-3/5 mobile-text-center md:text-right">
-          <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-primary-dark section-heading">ما هو LeadsMiner ؟</h2>
-          <p class="text-base md:text-lg leading-relaxed text-gray-700 mb-6">
-            LeadsMiner أداة قوية على نظام الويندوز، تعمل بنفس منطق الاستهداف الموجود في مدير الإعلانات الخاص بمواقع التواصل الاجتماعي مثل (فيسبوك، انستقرام، تيك توك) وتوصلك لعملاء دقيقين ومهتمين — وكل هذا بدون ما تدفع ولا ريال على الإعلانات.
-          </p>
-          <div class="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
-            <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-5 py-2.5 md:px-6 md:py-3 rounded-lg flex items-center btn-mobile text-sm md:text-base">
-              <i class="fas fa-download ml-2"></i> تنزيل الان
-            </a>
-            <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-5 py-2.5 md:px-6 md:py-3 rounded-lg flex items-center btn-mobile text-sm md:text-base">
-              <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
-            </a>
-          </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-particles" id="particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo-container">
+                    <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" alt="DataGram Logo" class="logo">
+                </div>
+                <h1 data-aos="fade-up">الطريقة الأذكى لجلب عملاء مهتمين بدون تكاليف إعلانات</h1>
+                <p data-aos="fade-up" data-aos-delay="200">اكتشف قوة البيانات واستهدف عملاء محتملين بذكاء مع LeadsMiner - الحل المتكامل لتنمية أعمالك وتحقيق أرباح غير مسبوقة</p>
+                <div class="btn-group" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn btn-primary">تحميل البرنامج</a>
+                    <a href="https://wa.me/201027930040" class="btn btn-secondary">تواصل معنا</a>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Features Section - Improved for Mobile -->
-    <section id="features" class="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50 mobile-feature-section">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-primary-dark section-heading text-center mobile-section-heading">ميزات LeadsMiner</h2>
-        <p class="text-base md:text-lg text-center text-gray-600 max-w-3xl mx-auto mb-8 md:mb-12 mobile-section-subheading">اكتشف القوة الكاملة لأداة استخراج العملاء الرائدة في السوق</p>
-        
-        <div class="grid mobile-feature-grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          <div class="feature-card animate-fade-in modern-card mobile-feature-card">
-            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-feature-icon"><i class="fas fa-users"></i></div>
-            <h3 class="text-xl font-bold mb-2 text-primary-dark mobile-feature-title">عملاء غير محدودين</h3>
-            <p class="text-gray-700 text-sm md:text-base mobile-feature-desc">تقدر تستخرج عدد لا نهائي من العملاء المحتملين لعملك</p>
-          </div>
-          
-          <div class="feature-card animate-fade-in modern-card mobile-feature-card">
-            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-feature-icon"><i class="fas fa-globe"></i></div>
-            <h3 class="text-xl font-bold mb-2 text-primary-dark mobile-feature-title">استهداف عالمي</h3>
-            <p class="text-gray-700 text-sm md:text-base mobile-feature-desc">استهدف أي دولة في العالم مع دقة في التوصيل</p>
-          </div>
-          
-          <div class="feature-card animate-fade-in modern-card mobile-feature-card">
-            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-feature-icon"><i class="fas fa-bullseye"></i></div>
-            <h3 class="text-xl font-bold mb-2 text-primary-dark mobile-feature-title">استهداف ذكي</h3>
-            <p class="text-gray-700 text-sm md:text-base mobile-feature-desc">حدد اهتمامات العملاء، الفئة العمرية، النوع، وحتى مكان السكن</p>
-          </div>
-          
-          <div class="feature-card animate-fade-in modern-card mobile-feature-card">
-            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-feature-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3 class="text-xl font-bold mb-2 text-primary-dark mobile-feature-title">خصوصية وأمان</h3>
-            <p class="text-gray-700 text-sm md:text-base mobile-feature-desc">بياناتك تبقى عندك وما تطلع لحد، بأعلى معايير الأمان</p>
-          </div>
-          
-          <div class="feature-card animate-fade-in modern-card mobile-feature-card">
-            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-feature-icon"><i class="fas fa-money-bill-wave"></i></div>
-            <h3 class="text-xl font-bold mb-2 text-primary-dark mobile-feature-title">توفير المال</h3>
-            <p class="text-gray-700 text-sm md:text-base mobile-feature-desc">وفر آلاف الريالات وتخلى عن الحملات الإعلانية المكلفة</p>
-          </div>
-          
-          <div class="feature-card animate-fade-in modern-card mobile-feature-card">
-            <div class="text-secondary-light text-2xl md:text-3xl mb-3 md:mb-4 mobile-feature-icon"><i class="fas fa-headset"></i></div>
-            <h3 class="text-xl font-bold mb-2 text-primary-dark mobile-feature-title">دعم فني 24/7</h3>
-            <p class="text-gray-700 text-sm md:text-base mobile-feature-desc">فريق دعم فني متاح على مدار الساعة لمساعدتك</p>
-          </div>
+    <!-- What is LeadsMiner Section -->
+    <section class="about" id="about" data-aos="fade-up">
+        <div class="container">
+            <h2>ما هو LeadsMiner ؟</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-aos="fade-left">LeadsMiner أداة قوية على نظام الويندوز تمكنك من استخراج وتحليل البيانات من مختلف المصاعد على الإنترنت. تم تصميم البرنامج خصيصًا لمساعدتك في العثور على عملاء محتملين مهتمين بخدماتك أو منتجاتك دون الحاجة إلى إنفاق الأموال على الحملات الإعلانية التقليدية.</p>
+                    <p data-aos="fade-left" data-aos-delay="200">باستخدام تقنيات الذكاء الاصطناعي المتقدمة، يقوم LeadsMiner بجمع وتصنيف البيانات ذات الصلة بأعمالك، مما يمكنك من الوصول إلى قاعدة عملاء مستهدفين بدقة عالية وبأقل التكاليف.</p>
+                    <div class="btn-group" data-aos="fade-left" data-aos-delay="400">
+                        <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn btn-primary">تحميل البرنامج</a>
+                        <a href="https://wa.me/201027930040" class="btn btn-secondary">تواصل معنا</a>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
+                    <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/leadsminer%20logo.png" alt="LeadsMiner Illustration">
+                </div>
+            </div>
         </div>
-        
-        <!-- Action buttons -->
-        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-12 mobile-action-buttons">
-          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center mobile-action-button">
-            <i class="fas fa-download ml-2"></i> تنزيل الان
-          </a>
-          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center mobile-action-button">
-            <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
-          </a>
-        </div>
-      </div>
     </section>
 
-    <!-- How it works -->
-    <section class="py-12 md:py-16 bg-primary-light text-white mobile-section-padding">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 section-heading text-center mobile-section-heading">كيف يعمل LeadsMiner؟</h2>
-        
-          <div class="bg-primary rounded-xl p-4 md:p-8 mb-6 md:mb-8 modern-card">
-            <div class="info-scroll space-y-4 mb-6 md:mb-8 flex justify-center">
-              <video class="rounded-lg shadow-lg mobile-video" controls>
-                <source src="howitworks.mp4" type="video/mp4">
-                متصفحك لا يدعم تشغيل الفيديو.
-              </video>
+    <!-- How it Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 data-aos="fade-up">طريقة استخدام برنامج LeadsMiner?</h2>
+            <div class="video-container" data-aos="zoom-in" data-aos-delay="300">
+                <video controls poster="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/leadsminer%20logo.png" preload="metadata">
+                    <source src="howitworks.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو
+                </video>
             </div>
-         
-
-
-          <div class="text-center mt-8 md:mt-10">
-            <h3 class="text-xl md:text-2xl font-extrabold mb-4 md:mb-6">جاهز تشترك ؟</h3>
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4">
-              <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
-                <i class="fas fa-download ml-2"></i> تنزيل الان
-              </a>
-              <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center btn-mobile">
-                <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
-              </a>
+            <div class="video-text">
+                <p data-aos="fade-up">شاهد كيف يمكن لـ LeadsMiner أن يغير طريقة عملك إلى الأبد. في هذا الفيديو التوضيحي، سنريك كيف يمكنك بسهولة استخراج البيانات، تحليلها، والوصول إلى عملاء محتملين مهتمين بخدماتك في دقائق معدودة.</p>
+                <div class="btn-group" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn btn-primary">تحميل البرنامج</a>
+                    <a href="https://wa.me/201027930040" class="btn btn-secondary">تواصل معنا</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 data-aos="fade-up">ميزات LeadsMiner</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>عملاء غير محدودين</h3>
+                    <p>احصل على عدد غير محدود من العملاء المحتملين دون قيود، وزد من فرص نمو أعمالك بشكل متواصل</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>استهداف عالمي</h3>
+                    <p>استهدف العملاء من أي مكان في العالم، ووسع نطاق عملك beyond الحدود الجغرافية التقليدية</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>استهداف ذكي</h3>
+                    <p>استخدم خوارزميات الذكاء الاصطناعي المتقدمة لاستهداف العملاء المناسبين في الوقت المناسب</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>خصوصية وأمان</h3>
+                    <p>بياناتك محمية بأعلى معايير الأمان، ونضمن خصوصية تامة لجميع عمليات الاستخراج والتحليل</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>توفير المال</h3>
+                    <p>وفر آلاف الدولارات التي تنفقها على الإعلانات التقليدية مع نتائج أفضل وتكاليف أقل</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>دعم فني 24/7</h3>
+                    <p>فريق دعم فني متاح على مدار الساعة لمساعدتك في أي استفسار أو مشكلة تواجهك</p>
+                </div>
+            </div>
+            <div class="btn-group" data-aos="fade-up">
+                <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn btn-primary">تحميل البرنامج</a>
+                <a href="https://wa.me/201027930040" class="btn btn-secondary">تواصل معنا</a>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 md:py-16 bg-white mobile-section-padding">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary-dark section-heading text-center mobile-section-heading">تواصل معنا</h2>
-        <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 mobile-section-subheading">هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا متاح لخدمتك</p>
-        
-        <div class="bg-blue-50 rounded-xl p-5 md:p-8 modern-card">
-          <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-6 md:mb-8">
-            <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-5 py-2.5 md:px-6 md:py-3 rounded-lg flex items-center btn-mobile text-sm md:text-base">
-              <i class="fab fa-whatsapp text-xl ml-2"></i> واتساب
-            </a>
-            <a href="mailto:info@datagram.site" class="btn-blue px-5 py-2.5 md:px-6 md:py-3 rounded-lg flex items-center btn-mobile text-sm md:text-base">
-              <i class="fas fa-envelope text-xl ml-2"></i> البريد الإلكتروني
-            </a>
-          </div>
-          
-          <p class="text-primary-dark font-semibold text-base md:text-lg">
-            <i class="fas fa-phone-alt ml-2"></i> +201027930040
-          </p>
+    <section class="contact" id="contact" data-aos="fade-up">
+        <div class="container">
+            <h2>تواصل معنا الآن</h2>
+            <p>هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا متاح دائماً لمساعدتك في رحلتك نحو النجاح</p>
+            <div class="btn-group">
+                <a href="https://wa.me/201027930040" class="btn btn-secondary">التواصل عبر واتساب</a>
+                <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn btn-primary">تحميل البرنامج</a>
+            </div>
         </div>
-        
-        <!-- Action buttons -->
-        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-12 mobile-action-buttons">
-          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center mobile-action-button">
-            <i class="fas fa-download ml-2"></i> تنزيل الان
-          </a>
-          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center mobile-action-button">
-            <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
-          </a>
-        </div>
-      </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-12 md:py-16 bg-gray-50 mobile-section-padding">
-      <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-primary-dark section-heading text-center mobile-section-heading">الأسئلة الشائعة</h2>
-        
-        <div class="space-y-4 mt-6 md:mt-8">
-          <div class="bg-white rounded-xl p-5 md:p-6 shadow modern-card mobile-card">
-            <h3 class="text-lg md:text-xl font-bold text-primary-dark mb-2">هل أحتاج إلى خبرة تقنية لاستخدام LeadsMiner؟</h3>
-            <p class="text-gray-700 text-sm md:text-base">لا، LeadsMiner صمم ليكون سهل الاستخدام حتى لأولئك الذين ليست لديهم خلفية تقنية. واجهة المستخدم بسيطة وبديهية.</p>
-          </div>
-          
-          <div class="bg-white rounded-xl p-5 md:p-6 shadow modern-card mobile-card">
-            <h3 class="text-lg md:text-xl font-bold text-primary-dark mb-2">كم من الوقت يستغرق لبدء رؤية النتائج؟</h3>
-            <p class="text-gray-700 text-sm md:text-base">معظم العملاء يبدأون في رؤية النتائج من الساعات الاولي، حيث يمكنك استخراج أول قائمة عملاء محتملين خلال اقل من ساعة واحدة من التثبيت.</p>
-          </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" alt="DataGram Logo" class="footer-logo">
+            <p>© 2023 DataGram - LeadsMiner. جميع الحقوق محفوظة</p>
         </div>
-        
-        <!-- Action buttons -->
-        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-12 mobile-action-buttons">
-          <a href="https://github.com/DataGram-lab/LeadsMiner/releases/download/LeadsMiner/LeadsMinerInstaller.exe" class="btn-blue px-6 py-3 rounded-lg text-base md:text-lg flex items-center mobile-action-button">
-            <i class="fas fa-download ml-2"></i> تنزيل الان
-          </a>
-          <a href="https://wa.me/201027930040" target="_blank" class="btn-green px-6 py-3 rounded-lg text-base md:text-lg flex items-center mobile-action-button">
-            <i class="fab fa-whatsapp ml-2"></i> تواصل معنا
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="bg-primary-dark py-8 text-white mobile-footer">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-6 md:mb-0">
-        <div class="flex justify-center items-center mb-4 select-none">
-          <img src="https://raw.githubusercontent.com/DataGram-lab/DataGram-lab.github.io/main/DataGram-title.png" 
-            alt="DataGram LeadsMiner Logo" 
-            style="background: transparent;" 
-            class="max-h-16 md:max-h-24 object-contain">
-        </div>
-        <p class="text-blue-200 mt-2 text-sm md:text-base">© 2025 جميع الحقوق محفوظة</p>
-      </div>
-      
-      <div class="flex flex-col items-center md:items-end">
-        <a href="https://wa.me/201027930040" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-accent-light font-semibold hover:text-accent-dark transition-colors mb-2">
-          <i class="fab fa-whatsapp text-xl"></i>
-          <span>+201027930040</span>
-        </a>
-        <div class="flex gap-4 mt-4">
-          <a href="#" class="text-blue-200 hover:text-white transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
-          <a href="#" class="text-blue-200 hover:text-white transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-          <a href="#" class="text-blue-200 hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    function scrollToSection(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-    
-    // Add animation on scroll
-    document.addEventListener('DOMContentLoaded', function() {
-      const animatedElements = document.querySelectorAll('.animate-fade-in');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.visibility = 'visible';
-            entry.target.classList.add('animate-fade-in');
-            observer.unobserve(entry.target);
-          }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-back'
         });
-      }, { threshold: 0.1 });
-      
-      animatedElements.forEach(el => {
-        el.style.visibility = 'hidden';
-        observer.observe(el);
-      });
-    });
-  </script>
+
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 20 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 15;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.top = `${posY}%`;
+                particle.style.left = `${posX}%`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                // Random gradient
+                const gradients = [
+                    'linear-gradient(135deg, #4361ee, #7209b7)',
+                    'linear-gradient(135deg, #3a56d4, #9d4edd)',
+                    'linear-gradient(135deg, #00b4d8, #4361ee)'
+                ];
+                particle.style.background = gradients[Math.floor(Math.random() * gradients.length)];
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (navToggle) {
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Video lazy loading
+            const video = document.querySelector('video');
+            if (video) {
+                video.setAttribute('preload', 'metadata');
+            }
+        });
+    </script>
 </body>
 </html>
